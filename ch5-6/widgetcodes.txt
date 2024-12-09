@@ -1,0 +1,11 @@
+
+class _DiaryPageState extends State<DiaryPage> {
+  final TextEditingController _controller = TextEditingController();
+  List<String> _entries = [];
+
+  void _addEntry(String content) {
+    setState(() {
+      _entries.add(content);
+    });
+    _controller.clear(); // Clear the TextField after saving
+  }

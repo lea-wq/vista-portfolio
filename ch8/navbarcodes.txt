@@ -1,0 +1,39 @@
+ Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Diary App'),
+        centerTitle: true,
+        backgroundColor: Colors.pink, // Pink background for AppBar
+      ),
+      body: Column(
+        children: [
+          // Custom Top Navigation Bar
+          Container(
+            color: Colors.pink, // Background color of the top navbar
+            child: BottomNavigationBar(
+              currentIndex: _currentIndex,
+              onTap: (index) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'Homepage',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.book),
+                  label: 'Diary',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.note),
+                  label: 'Notes',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.list),
+                  label: 'Lists',
+                ),
+              ],
+              type: BottomNavigationBarType.fixed, // Prevents overflow of items
+            ),
